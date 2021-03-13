@@ -29,7 +29,7 @@ both update based on the selection, and when a user hovers over a state on the m
 the corresponding bar on the bar graph is highlighted in yellow (if there is data
 for that state). 
 
-![remix](imgs/webpage.png)
+![remix](webpage.png)
 
 The vis can be run locally: download the files, change line 72 of index.html to correspond
 to the path of the csv file on your computer, run the server.py file (e.g. 'python server.py' in a terminal),
