@@ -69,7 +69,7 @@ Hover over a state to see average prices for storage units in that state. Some s
         .attr('x', 50)
         .attr('y', 600)
 
-    d3.csv("http://localhost:8000/cars-sample-original.csv").then(
+    d3.csv("https://masun77.github.io/04-Remix/cars-sample-original.csv").then(
         function(data) {
             for (let i = 0; i < data.length; i++) {
                 let d = data[i]
