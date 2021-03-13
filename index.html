@@ -5,7 +5,14 @@
     <title>poly</title>
 </head>
 <body>
-<p id='label' style="font-size:50px">Continental U.S. Storage Unit Average Price by State</p>
+<p id='label' style="font-size:50px">Continental U.S. Storage Unit Average Price by State and Unit Size in 2020</p>
+<p style="font-size:40px">This visualization show storage unit prices across the U.S. in 2020. Prices are
+averaged by state based on available pricing data from the four largest self-storage
+    companies in the country: Life Storage, CubeSmart, Extra Space and Public Storage.
+(Data collected by LifeStorage.) Select one of the three rectangular buttons below to see
+a chloropleth map for average cost per state for a storage unit of that size,
+    and a bar chart of average price for a unit of that size across all states.
+Hover over a state to see average prices for storage units in that state. Some states do not have associated data.  </p>
 <div id="controls" >
     <svg id="ctrls" height = 100 width = 2000></svg>
     <svg id="workspace" height = "800" width = "2000"></svg>
@@ -17,10 +24,6 @@
 
 <script>
     console.log(d3); // test if d3 is loaded
-
-    // todo:
-    // line chart of totals ->  highlight in bar chart
-    // explanation
 
     let svg = d3.select('#workspace')
 
@@ -57,14 +60,14 @@
     setUpControls()
     svg.append('svg')
         .attr('id', 'bargraph')
-        .attr('x', 1500)
-        .attr('y', 100)
-        .attr('height', 700)
-        .attr('width', 500)
+        .attr('x', 1400)
+        .attr('y', 10)
+        .attr('height', 790)
+        .attr('width', 600)
     svg.append('svg')
         .attr('id', 'sideTable')
-        .attr('x', 100)
-        .attr('y', 700)
+        .attr('x', 50)
+        .attr('y', 600)
 
     d3.csv("http://localhost:8000/cars-sample-original.csv").then(
         function(data) {
