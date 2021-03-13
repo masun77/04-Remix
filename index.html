@@ -34,7 +34,7 @@
     let stateBegun = false
     let currStatePoly = ""
 
-    let counter = 0
+    let counter = 38
 
     let states = new Array('Washington', 'Oregon', 'California',
         'Nevada', 'Idaho', 'Montana', 'Wyoming', 'Uta', 'Arizona',
@@ -95,6 +95,7 @@
         addToLabel(states[counter] + "," + currStatePoly)
         currStatePoly = ""
         counter += 1
+        replaceInTitle(" - " + states[counter])
     }
 
     // Set the label at the top of the page to the given text
@@ -115,7 +116,7 @@
     function replaceInTitle(text) {
         let title = document.getElementById("title")
         if (title.childNodes.length > 1) {
-            title.removeChild(label.lastChild)
+            title.removeChild(title.lastChild)
         }
         title.appendChild(document.createTextNode(text))
     }
